@@ -8,17 +8,57 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var displayText = ""
+    @State var onnxTrainingRunner: OnnxTrainingRunner?
+
+    let serialQueue = DispatchQueue(label: "com.lan.flqueue")
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Text(displayText)
+        Button("Load onnx models") {
+            loadModels()
+        }.padding()
+        Button("Delete session") {
+            onnxTrainingRunner?.ortSession = nil
+        }.padding()
+    }
+
+//    MARK: private funcs
+    
+    private func loadModels() {
+        let bundle = Bundle.main
+        let rtuCheckpoint = "rtu_checkpoint"
+        let rtuTrainingModel = "rtu_training_model"
+        let rtuEvalModel = "rtu_eval_model"
+        let rtuOptimizerModel = "rtu_optimizer_model"
+        let ortExt = "ort"
+        let ckptExt = "ckpt"
+        
+        let ckpt = Self.getPathFor(resource: rtuCheckpoint, ofType: ckptExt, bundle: bundle)!
+        let trainModelPath = Self.getPathFor(resource: rtuTrainingModel, ofType: ortExt, bundle: bundle)!
+        let evalModelPath = Self.getPathFor(resource: rtuEvalModel, ofType: ortExt, bundle: bundle)!
+        let optModelPath = Self.getPathFor(resource: rtuOptimizerModel, ofType: ortExt, bundle: bundle)!
+
+        onnxTrainingRunner = OnnxTrainingRunner()
+
+        do {
+            try onnxTrainingRunner!.loadModels(
+                checkpointPath: ckpt,
+                trainModelPath: trainModelPath,
+                evalModelPath: evalModelPath,
+                optimizerModelPath: optModelPath)
+            pr(text: "loaded models")
+        } catch {
+            pr(text: error.localizedDescription)
         }
-        .padding()
+    }
+    
+    public static func getPathFor(resource: String, ofType fileType: String?, bundle: Bundle) -> String? {
+        return bundle.path(forResource: resource, ofType: fileType, inDirectory: nil)
+    }
+    
+    func pr(text: String, completion: (() -> Void)? = nil) {
+        print(text)
+        displayText = text
     }
 }
-
-//#Preview {
-//    ContentView()
-//}
