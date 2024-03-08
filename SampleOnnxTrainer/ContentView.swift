@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var displayText = ""
-    @State var onnxTrainingRunner: OnnxTrainingRunner?
 
     let serialQueue = DispatchQueue(label: "com.lan.flqueue")
 
@@ -17,9 +16,6 @@ struct ContentView: View {
         Text(displayText)
         Button("Load onnx models") {
             loadModels()
-        }.padding()
-        Button("Delete session") {
-            onnxTrainingRunner?.ortSession = nil
         }.padding()
     }
 
@@ -39,10 +35,10 @@ struct ContentView: View {
         let evalModelPath = Self.getPathFor(resource: rtuEvalModel, ofType: ortExt, bundle: bundle)!
         let optModelPath = Self.getPathFor(resource: rtuOptimizerModel, ofType: ortExt, bundle: bundle)!
 
-        onnxTrainingRunner = OnnxTrainingRunner()
+        let onnxTrainingRunner = OnnxTrainingRunner()
 
         do {
-            try onnxTrainingRunner!.loadModels(
+            try onnxTrainingRunner.loadModels(
                 checkpointPath: ckpt,
                 trainModelPath: trainModelPath,
                 evalModelPath: evalModelPath,
