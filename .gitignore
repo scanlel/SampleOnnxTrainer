@@ -20,7 +20,6 @@ xcshareddata
 
 # CocoaPods
 Pods/
-*.podspec
 Podfile.lock
 
 # Carthage
