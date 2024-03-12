@@ -66,6 +66,12 @@ bool SafeMultiply(size_t a, size_t b, size_t& out) {
 
 #pragma mark - Public
 
+- (void)dealloc {
+    [_externalTensorData setData:[[NSData alloc] init]];
+    _value.reset();
+    _typeInfo.reset();
+}
+
 - (nullable instancetype)initWithTensorData:(NSMutableData*)tensorData
                                 elementType:(ORTTensorElementDataType)elementType
                                       shape:(NSArray<NSNumber*>*)shape
