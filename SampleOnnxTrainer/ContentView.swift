@@ -52,21 +52,12 @@ struct ContentView: View {
         }
     }
     
-<<<<<<< HEAD
     private func trainModels() {
         let bundle = Bundle.main
         let rtuCheckpoint = "rtu_checkpoint"
         let rtuTrainingModel = "rtu_training_model"
         let rtuEvalModel = "rtu_eval_model"
         let rtuOptimizerModel = "rtu_optimizer_model"
-=======
-    private func loadTestModels() {
-        let bundle = Bundle.main
-        let rtuCheckpoint = "prod_checkpoint"
-        let rtuTrainingModel = "prod_training_model"
-        let rtuEvalModel = "prod_eval_model"
-        let rtuOptimizerModel = "prod_optimizer_model"
->>>>>>> 03d2bcd (add model for silhoutte)
         let ortExt = "ort"
         let ckptExt = "ckpt"
         
@@ -87,14 +78,13 @@ struct ContentView: View {
         } catch {
             pr(text: error.localizedDescription)
         }
-<<<<<<< HEAD
         
         do {
             for _ in 1 ... 100 {
-                try _ = onnxTrainingRunner.trainModel()
+                try! _ = onnxTrainingRunner.trainModel()
             }
             pr(text: "train models")
-=======
+        }
     }
     
     private func loadSilhouetteModels() {
@@ -120,16 +110,11 @@ struct ContentView: View {
                 evalModelPath: evalModelPath,
                 optimizerModelPath: optModelPath)
             pr(text: "loaded models")
->>>>>>> 03d2bcd (add model for silhoutte)
         } catch {
             pr(text: error.localizedDescription)
         }
     }
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 03d2bcd (add model for silhoutte)
     public static func getPathFor(resource: String, ofType fileType: String?, bundle: Bundle) -> String? {
         return bundle.path(forResource: resource, ofType: fileType, inDirectory: nil)
     }
