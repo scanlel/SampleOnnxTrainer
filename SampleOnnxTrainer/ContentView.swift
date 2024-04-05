@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         Text(displayText)
         Button("Load onnx models") {
-            loadModels()
+            loadSilhouetteModels()
         }.padding()
     }
 
@@ -49,6 +49,62 @@ struct ContentView: View {
         }
     }
     
+    private func loadTestModels() {
+        let bundle = Bundle.main
+        let rtuCheckpoint = "prod_checkpoint"
+        let rtuTrainingModel = "prod_training_model"
+        let rtuEvalModel = "prod_eval_model"
+        let rtuOptimizerModel = "prod_optimizer_model"
+        let ortExt = "ort"
+        let ckptExt = "ckpt"
+        
+        let ckpt = Self.getPathFor(resource: rtuCheckpoint, ofType: ckptExt, bundle: bundle)!
+        let trainModelPath = Self.getPathFor(resource: rtuTrainingModel, ofType: ortExt, bundle: bundle)!
+        let evalModelPath = Self.getPathFor(resource: rtuEvalModel, ofType: ortExt, bundle: bundle)!
+        let optModelPath = Self.getPathFor(resource: rtuOptimizerModel, ofType: ortExt, bundle: bundle)!
+
+        let onnxTrainingRunner = OnnxTrainingRunner()
+
+        do {
+            try onnxTrainingRunner.loadModels(
+                checkpointPath: ckpt,
+                trainModelPath: trainModelPath,
+                evalModelPath: evalModelPath,
+                optimizerModelPath: optModelPath)
+            pr(text: "loaded models")
+        } catch {
+            pr(text: error.localizedDescription)
+        }
+    }
+    
+    private func loadSilhouetteModels() {
+        let bundle = Bundle.main
+        let rtuCheckpoint = "silhouette_checkpoint"
+        let rtuTrainingModel = "silhouette_training_model"
+        let rtuEvalModel = "silhouette_eval_model"
+        let rtuOptimizerModel = "silhouette_optimizer_model"
+        let ortExt = "ort"
+        let ckptExt = "ckpt"
+        
+        let ckpt = Self.getPathFor(resource: rtuCheckpoint, ofType: ckptExt, bundle: bundle)!
+        let trainModelPath = Self.getPathFor(resource: rtuTrainingModel, ofType: ortExt, bundle: bundle)!
+        let evalModelPath = Self.getPathFor(resource: rtuEvalModel, ofType: ortExt, bundle: bundle)!
+        let optModelPath = Self.getPathFor(resource: rtuOptimizerModel, ofType: ortExt, bundle: bundle)!
+
+        let onnxTrainingRunner = OnnxTrainingRunner()
+
+        do {
+            try onnxTrainingRunner.loadModels(
+                checkpointPath: ckpt,
+                trainModelPath: trainModelPath,
+                evalModelPath: evalModelPath,
+                optimizerModelPath: optModelPath)
+            pr(text: "loaded models")
+        } catch {
+            pr(text: error.localizedDescription)
+        }
+    }
+
     public static func getPathFor(resource: String, ofType fileType: String?, bundle: Bundle) -> String? {
         return bundle.path(forResource: resource, ofType: fileType, inDirectory: nil)
     }

@@ -20,6 +20,19 @@
 		6830A6282B9A73C70078918F /* rtu_checkpoint.ckpt in Resources */ = {isa = PBXBuildFile; fileRef = 6830A6232B9A73C70078918F /* rtu_checkpoint.ckpt */; };
 		6830A6292B9A73C70078918F /* rtu_optimizer_model.ort in Resources */ = {isa = PBXBuildFile; fileRef = 6830A6242B9A73C70078918F /* rtu_optimizer_model.ort */; };
 		AFC70BA19F990D3686820BEF /* Pods_SampleOnnxTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9667C3CE32414FD30163E024 /* Pods_SampleOnnxTrainer.framework */; };
+		B521C8032BBDE481000965A5 /* prod_optimizer_model.ort in Resources */ = {isa = PBXBuildFile; fileRef = B521C7FD2BBDE481000965A5 /* prod_optimizer_model.ort */; };
+		B521C8042BBDE481000965A5 /* prod_checkpoint.ckpt in Resources */ = {isa = PBXBuildFile; fileRef = B521C7FE2BBDE481000965A5 /* prod_checkpoint.ckpt */; };
+		B521C8052BBDE481000965A5 /* prod_training_model.ort in Resources */ = {isa = PBXBuildFile; fileRef = B521C7FF2BBDE481000965A5 /* prod_training_model.ort */; };
+		B521C8062BBDE481000965A5 /* prod_features.csv in Resources */ = {isa = PBXBuildFile; fileRef = B521C8002BBDE481000965A5 /* prod_features.csv */; };
+		B521C8072BBDE481000965A5 /* prod_eval_model.ort in Resources */ = {isa = PBXBuildFile; fileRef = B521C8012BBDE481000965A5 /* prod_eval_model.ort */; };
+		B521C8082BBDE481000965A5 /* prod_required_operators.config in Resources */ = {isa = PBXBuildFile; fileRef = B521C8022BBDE481000965A5 /* prod_required_operators.config */; };
+		B5BB6F752BBF543D00C8D2E7 /* OnnxInferenceRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB6F742BBF543D00C8D2E7 /* OnnxInferenceRunner.swift */; };
+		B5BD34802BC093E6005BE7CA /* silhouette_required_operators.config in Resources */ = {isa = PBXBuildFile; fileRef = B5BD347A2BC093E6005BE7CA /* silhouette_required_operators.config */; };
+		B5BD34812BC093E6005BE7CA /* silhouette_checkpoint.ckpt in Resources */ = {isa = PBXBuildFile; fileRef = B5BD347B2BC093E6005BE7CA /* silhouette_checkpoint.ckpt */; };
+		B5BD34822BC093E6005BE7CA /* silhouette_optimizer_model.ort in Resources */ = {isa = PBXBuildFile; fileRef = B5BD347C2BC093E6005BE7CA /* silhouette_optimizer_model.ort */; };
+		B5BD34832BC093E6005BE7CA /* silhouette_eval_model.ort in Resources */ = {isa = PBXBuildFile; fileRef = B5BD347D2BC093E6005BE7CA /* silhouette_eval_model.ort */; };
+		B5BD34842BC093E6005BE7CA /* silhouette_training_model.ort in Resources */ = {isa = PBXBuildFile; fileRef = B5BD347E2BC093E6005BE7CA /* silhouette_training_model.ort */; };
+		B5BD34852BC093E6005BE7CA /* silhouette_features.csv in Resources */ = {isa = PBXBuildFile; fileRef = B5BD347F2BC093E6005BE7CA /* silhouette_features.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +51,19 @@
 		6830A6232B9A73C70078918F /* rtu_checkpoint.ckpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = rtu_checkpoint.ckpt; sourceTree = "<group>"; };
 		6830A6242B9A73C70078918F /* rtu_optimizer_model.ort */ = {isa = PBXFileReference; lastKnownFileType = file; path = rtu_optimizer_model.ort; sourceTree = "<group>"; };
 		9667C3CE32414FD30163E024 /* Pods_SampleOnnxTrainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleOnnxTrainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B521C7FD2BBDE481000965A5 /* prod_optimizer_model.ort */ = {isa = PBXFileReference; lastKnownFileType = file; path = prod_optimizer_model.ort; sourceTree = "<group>"; };
+		B521C7FE2BBDE481000965A5 /* prod_checkpoint.ckpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = prod_checkpoint.ckpt; sourceTree = "<group>"; };
+		B521C7FF2BBDE481000965A5 /* prod_training_model.ort */ = {isa = PBXFileReference; lastKnownFileType = file; path = prod_training_model.ort; sourceTree = "<group>"; };
+		B521C8002BBDE481000965A5 /* prod_features.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prod_features.csv; sourceTree = "<group>"; };
+		B521C8012BBDE481000965A5 /* prod_eval_model.ort */ = {isa = PBXFileReference; lastKnownFileType = file; path = prod_eval_model.ort; sourceTree = "<group>"; };
+		B521C8022BBDE481000965A5 /* prod_required_operators.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prod_required_operators.config; sourceTree = "<group>"; };
+		B5BB6F742BBF543D00C8D2E7 /* OnnxInferenceRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnnxInferenceRunner.swift; sourceTree = "<group>"; };
+		B5BD347A2BC093E6005BE7CA /* silhouette_required_operators.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = silhouette_required_operators.config; sourceTree = "<group>"; };
+		B5BD347B2BC093E6005BE7CA /* silhouette_checkpoint.ckpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = silhouette_checkpoint.ckpt; sourceTree = "<group>"; };
+		B5BD347C2BC093E6005BE7CA /* silhouette_optimizer_model.ort */ = {isa = PBXFileReference; lastKnownFileType = file; path = silhouette_optimizer_model.ort; sourceTree = "<group>"; };
+		B5BD347D2BC093E6005BE7CA /* silhouette_eval_model.ort */ = {isa = PBXFileReference; lastKnownFileType = file; path = silhouette_eval_model.ort; sourceTree = "<group>"; };
+		B5BD347E2BC093E6005BE7CA /* silhouette_training_model.ort */ = {isa = PBXFileReference; lastKnownFileType = file; path = silhouette_training_model.ort; sourceTree = "<group>"; };
+		B5BD347F2BC093E6005BE7CA /* silhouette_features.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = silhouette_features.csv; sourceTree = "<group>"; };
 		F4ACDF29E8DBFEE3C1859558 /* Pods-SampleOnnxTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleOnnxTrainer.release.xcconfig"; path = "Target Support Files/Pods-SampleOnnxTrainer/Pods-SampleOnnxTrainer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +100,8 @@
 		6830A6032B9A6A380078918F /* SampleOnnxTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				B521C7FC2BBDE481000965A5 /* OnnxTestModels */,
+				B533C2762BBDD142008D377A /* SilhouetteModels */,
 				6830A61F2B9A72C90078918F /* OnnxModels */,
 				6830A6142B9A6DE20078918F /* OnnxWrappers */,
 				6830A6042B9A6A380078918F /* SampleOnnxTrainerApp.swift */,
@@ -95,6 +123,7 @@
 		6830A6142B9A6DE20078918F /* OnnxWrappers */ = {
 			isa = PBXGroup;
 			children = (
+				B5BB6F742BBF543D00C8D2E7 /* OnnxInferenceRunner.swift */,
 				6830A6152B9A6DFC0078918F /* OnnxTrainingRunner.swift */,
 				6830A6172B9A6E300078918F /* OnnxToolkit.swift */,
 				6830A6192B9A6E8A0078918F /* OnnxErrors.swift */,
@@ -120,6 +149,32 @@
 				9667C3CE32414FD30163E024 /* Pods_SampleOnnxTrainer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B521C7FC2BBDE481000965A5 /* OnnxTestModels */ = {
+			isa = PBXGroup;
+			children = (
+				B521C7FD2BBDE481000965A5 /* prod_optimizer_model.ort */,
+				B521C7FE2BBDE481000965A5 /* prod_checkpoint.ckpt */,
+				B521C7FF2BBDE481000965A5 /* prod_training_model.ort */,
+				B521C8002BBDE481000965A5 /* prod_features.csv */,
+				B521C8012BBDE481000965A5 /* prod_eval_model.ort */,
+				B521C8022BBDE481000965A5 /* prod_required_operators.config */,
+			);
+			path = OnnxTestModels;
+			sourceTree = "<group>";
+		};
+		B533C2762BBDD142008D377A /* SilhouetteModels */ = {
+			isa = PBXGroup;
+			children = (
+				B5BD347B2BC093E6005BE7CA /* silhouette_checkpoint.ckpt */,
+				B5BD347D2BC093E6005BE7CA /* silhouette_eval_model.ort */,
+				B5BD347F2BC093E6005BE7CA /* silhouette_features.csv */,
+				B5BD347C2BC093E6005BE7CA /* silhouette_optimizer_model.ort */,
+				B5BD347A2BC093E6005BE7CA /* silhouette_required_operators.config */,
+				B5BD347E2BC093E6005BE7CA /* silhouette_training_model.ort */,
+			);
+			path = SilhouetteModels;
 			sourceTree = "<group>";
 		};
 		F57F86162BC8DBEF49033F46 /* Pods */ = {
@@ -190,12 +245,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B521C8042BBDE481000965A5 /* prod_checkpoint.ckpt in Resources */,
+				B5BD34812BC093E6005BE7CA /* silhouette_checkpoint.ckpt in Resources */,
+				B521C8062BBDE481000965A5 /* prod_features.csv in Resources */,
+				B521C8052BBDE481000965A5 /* prod_training_model.ort in Resources */,
+				B5BD34852BC093E6005BE7CA /* silhouette_features.csv in Resources */,
+				B521C8032BBDE481000965A5 /* prod_optimizer_model.ort in Resources */,
+				B5BD34842BC093E6005BE7CA /* silhouette_training_model.ort in Resources */,
+				B521C8072BBDE481000965A5 /* prod_eval_model.ort in Resources */,
 				6830A6272B9A73C70078918F /* rtu_features.csv in Resources */,
+				B5BD34802BC093E6005BE7CA /* silhouette_required_operators.config in Resources */,
 				6830A60C2B9A6A390078918F /* Preview Assets.xcassets in Resources */,
+				B5BD34832BC093E6005BE7CA /* silhouette_eval_model.ort in Resources */,
+				B5BD34822BC093E6005BE7CA /* silhouette_optimizer_model.ort in Resources */,
 				6830A6252B9A73C70078918F /* rtu_eval_model.ort in Resources */,
 				6830A6092B9A6A390078918F /* Assets.xcassets in Resources */,
 				6830A6292B9A73C70078918F /* rtu_optimizer_model.ort in Resources */,
 				6830A6262B9A73C70078918F /* rtu_training_model.ort in Resources */,
+				B521C8082BBDE481000965A5 /* prod_required_operators.config in Resources */,
 				6830A6282B9A73C70078918F /* rtu_checkpoint.ckpt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +301,7 @@
 			files = (
 				6830A6162B9A6DFC0078918F /* OnnxTrainingRunner.swift in Sources */,
 				6830A61A2B9A6E8A0078918F /* OnnxErrors.swift in Sources */,
+				B5BB6F752BBF543D00C8D2E7 /* OnnxInferenceRunner.swift in Sources */,
 				6830A6072B9A6A380078918F /* ContentView.swift in Sources */,
 				6830A6182B9A6E300078918F /* OnnxToolkit.swift in Sources */,
 				6830A6052B9A6A380078918F /* SampleOnnxTrainerApp.swift in Sources */,
